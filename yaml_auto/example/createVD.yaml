@@ -1,10 +1,10 @@
-# volumes_create:
-#   format: "qcow2"
-#   name: "TESTS123"
-#   pool_id: "TESTSSS"
-#   size: "1"
-#   type: "thin"
-#   unit: "M"
+volumes_create:
+  format: "qcow2"
+  name: "TESTS123"
+  pool_id: "TESTSSS"
+  size: "1"
+  type: "thin"
+  unit: "M"
 
 # volumes_delete:
 #   full_delete: "false"
