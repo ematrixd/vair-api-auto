@@ -9,14 +9,27 @@ from LIBS.api.yaml_parser import YamlParser
 from LIBS.api.api_parser import Swagger
 from LIBS.api.vair import Vair
 
+config = configparser.ConfigParser()
+config.read('config.ini')
+uri = config['node']['uri']
+host = config['node']['host']
+login = config['node']['login']
+password = config['node']['password']
+api = config['api']['api_doc']
+
 
 def main(yaml_parser):
     Vair(yaml_parser).post()
 
 
-@click.command()
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
 @click.argument('file_path', type=click.Path(exists=True))  
-def process_yaml(file_path):
+def start_yaml(file_path):
     if not config['node']['version']:
         print('Не указана версия')
         assert False
@@ -27,12 +40,11 @@ def process_yaml(file_path):
         main(yaml_parser)
 
 
+@cli.command()
+def get_all_methods():
+    swagger = Swagger(f'{uri}://{host}/', login, password, api)
+    print(swagger.get_all_methods())
+
+
 if __name__ == "__main__":
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    uri = config['node']['uri']
-    host = config['node']['host']
-    login = config['node']['login']
-    password = config['node']['password']
-    api = config['api']['api_doc']
-    process_yaml()
+    cli()
