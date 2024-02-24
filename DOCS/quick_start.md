@@ -38,6 +38,12 @@ pip3 install pyyaml click requests
 
 ```
 
+### Переименовать файл config.ini
+
+```plaintext
+mv config.ini.example config.ini
+```
+
 ### Настроить config.ini
 
 ```plaintext
@@ -59,4 +65,3 @@ python3 start.py start-yaml yaml_auto/example/createVD.yaml
 
 Это документация, которая показывает процесс установки и использование проекта.  
 
-@ Разработано при поддержке АЭРОДИСК
