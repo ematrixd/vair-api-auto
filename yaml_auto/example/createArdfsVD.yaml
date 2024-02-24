@@ -1,0 +1,17 @@
+# volumes_create:
+#   format: "qcow2"
+#   name: "TESTS123"
+#   pool_id: "TESTSSS"
+#   size: "1"
+#   type: "thin"
+#   unit: "M"
+var: &name "TESTS"
+
+
+nfs_disks_create:
+  format: "qcow2"
+  name: *name
+  share_id: "157621dd-2d59-4504-a023-432453d91235"
+  size: "1"
+  type: "thin"
+  unit: "M"

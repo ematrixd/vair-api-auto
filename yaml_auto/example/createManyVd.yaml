@@ -1,0 +1,7 @@
+volumes_create|10:
+  format: "qcow2"
+  name: "TESTS<"
+  pool_id: "TESTSSS"
+  size: "1"
+  type: "thin"
+  unit: "M"
