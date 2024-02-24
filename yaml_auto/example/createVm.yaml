@@ -1,0 +1,112 @@
+var: &vm_conf
+  name: "TEST",
+  alias: "",
+  description: "",
+  os_type: "Linux",
+  os_variant: "altlinux",
+  boot_device: "hd",
+  havm: "1",
+  priority: "0",
+  loader_bios: "LEGACY",
+  graphics_driver: "vmvga",
+  cpu_model: "host-passthrough",
+  cpu_features_force: [
+      ""
+  ],
+  cpu_features_require: [
+      ""
+  ],
+  cpu_features_optional: [
+      ""
+  ],
+  cpu_features_disable: [
+      ""
+  ],
+  cpu_features_forbid: [
+      ""
+  ],
+  cpu_sockets: "1",
+  cpu_cores: "2",
+  cpu_threads: "3",
+  cpu_virtual_cores: "1",
+  cpu_dynamic_topology: false,
+  memory_standard_value: "1",
+  memory_maximum_value: 16000000000,
+  memory_unit: "G",
+  graphics: "vnc",
+  password: "",
+  volume_size: "100",
+  volume_unit: "G",
+  adl: false,
+  pool: [
+      "TEST"
+  ],
+  disk_id: [
+      "f8162581-4fb6-4d10-8ef0-ae46ecaa1b0f"
+  ],
+  disk_name: [
+      "TEST/TEST1"
+  ],
+  disk_emulation: [
+      "virtio"
+  ],
+  disk_cache: [
+      "none"
+  ],
+  disk_io: [
+      "threads"
+  ],
+  disk_shared: [
+      "false"
+  ],
+  disk_readonly: [
+      "false"
+  ],
+  disk_format: [
+      "qcow2"
+  ],
+  disk_read_iops_sec: [
+      "500"
+  ],
+  disk_write_iops_sec: [
+      "500"
+  ],
+  disk_read_bytes_sec: [
+      "150"
+  ],
+  disk_write_bytes_sec: [
+      "100"
+  ],
+  disk_type: [
+      "disk"
+  ],
+  disk_source: [
+      "/vair/ACFS-ef2329cf-131e-4c9b-9f58-60cd16fa4d33/vair/disk/ff/eb/TEST1"
+  ],
+  disk_storage: [
+      "acfs"
+  ],
+  disk_wwn: [
+      "7024e8d26bc84e15"
+  ],
+  network_name: [
+      "vair-vnet0"
+  ],
+  network_type: [
+      "bridge"
+  ],
+  network_mode: [
+      "bridge"
+  ],
+  network_model: [
+      "virtio"
+  ],
+  network_portgroup: [
+      "test2"
+  ],
+  network_bridge: [
+      "ovs-br0"
+  ],
+  network_mac: [
+      "6C:4A:74:DE:5D:84"
+  ]

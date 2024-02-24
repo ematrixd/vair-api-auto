@@ -26,6 +26,11 @@ class YamlParser():
                 pool_id = [i['id'] for i in data if i['name'] == value_value][0]
                 self.data[key_value] = pool_id
                 continue
+            if 'share_id' in key_value and not self.__is_valid_uuid(value_value):
+                data = self.swagger.start_method('nfs', 'id', 'path')
+                share_id = [i['id'] for i in data if i['path'] == value_value][0]
+                self.data[key_value] = share_id
+                continue
             if 'volume_name>' in value_value:
                 data = self.swagger.start_method('volumes', 'id', 'name')
                 volumes_id = [i['id'] for i in data if i['name'] == value_value.split('>')[-1]][0]
@@ -39,6 +44,8 @@ class YamlParser():
 
     def _vair_processing(self):
         for key, value in self.yaml.items():
+            if key.startswith('var'):
+                continue
             if '|' in key:
                 name = key.split('|')
                 cycle = int(name[-1])

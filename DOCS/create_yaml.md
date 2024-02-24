@@ -50,7 +50,19 @@
 <details>
   <summary>Список методов POST</summary>
 
-* acfs_create: Создание acfs пула.
+<details>
+    <summary>acfs_create: Создание acfs пула.</summary>
+
+```json
+    {
+        "description": "string", # описание пула
+        "name": "string",        # имя пула
+        "node": "string",        # выбор узла на котором будет запущен задача
+        "wwn_disk": "string"     # wwn блочного устройства пригнаного по iscsi например 366c4a7404e47494e453032342c49470d
+    }
+```
+</details>
+
 * acfs_delete: Удаление acfs пула.
 * acfs_disks_convert: Конвертация из vmdk в формат для VAIR.
 * acfs_disks_copy: Копирование виртуального диска.
